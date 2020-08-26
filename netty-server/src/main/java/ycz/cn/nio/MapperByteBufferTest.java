@@ -12,7 +12,7 @@ public class MapperByteBufferTest {
 
     public static void main(String[] args) throws Exception {
 
-        RandomAccessFile randomAccessFile = new RandomAccessFile("file02.txt", "rw");
+        RandomAccessFile randomAccessFile = new RandomAccessFile("F:\\file02.txt", "rw");
         FileChannel channel = randomAccessFile.getChannel();
         /**
          * 参数1：读写模式
@@ -22,7 +22,7 @@ public class MapperByteBufferTest {
          */
         MappedByteBuffer mappedByteBuffer = channel.map(FileChannel.MapMode.READ_WRITE, 0, 5);
         mappedByteBuffer.put(0, (byte)'H');
-        mappedByteBuffer.put(5, (byte)'9');
+        mappedByteBuffer.put(4, (byte)'9');
 
         randomAccessFile.close();
         System.out.println("修改成功！");
